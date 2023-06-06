@@ -83,7 +83,11 @@ if __name__ == '__main__':
     data = sio.loadmat('./data.mat')
 
     # Load subject anthropometric measurements in.
-    measurements = read_measurements('./measurements/XXX_measurements.csv')
+    try:
+        measurements = read_measurements('./measurements/anouar_measurements.csv')
+    except FileNotFoundError:
+        print("Make sure to enter the correct filename on line 87 in the script.")
+        exit(0)
 
     # For every measurement, calculate the error for all 60 subjects in ARI data.
     head_widths = [subject[0] for subject in data['X']]
@@ -124,14 +128,10 @@ if __name__ == '__main__':
     for i in ignore_indices:
         errors.pop(i)
 
-    errors_copy = errors.copy()
-    errors_copy.sort()
     best_index = errors.index(min(errors))
-    median_index = errors.index(errors_copy[len(errors) // 2])
     worst_index = errors.index(max(errors))
 
     best = get_id(data, best_index)
-    median = get_id(data, median_index)
     worst = get_id(data, worst_index)
     print("Best-matching HRTF: ", best, " with error: ", min(errors))
     print("Worst-matching HRTF: ", worst, " with error: ", max(errors))
