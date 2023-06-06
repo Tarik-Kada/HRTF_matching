@@ -1,0 +1,13 @@
+Measurement (metric)	Datapoint in ARI measurements	Value
+Head width (cm)	x1	
+Head height (cm)	x2	
+Head depth (cm)	x3	
+Heigth (cm)	x14	
+Seated height (cm)	x15	
+Head circumference (cm)	x16	
+Shoulder circumference (cm)	x17	
+Ear length (cm)	d5	
+Ear width (cm)	d6	
+Ear inside length (cm)	d1 + d2 + d4	
+Ear inside width (cm)	d3	
+Weight (kg)	WeightKilograms	
