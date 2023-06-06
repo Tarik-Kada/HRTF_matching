@@ -133,6 +133,5 @@ if __name__ == '__main__':
     best = get_id(data, best_index)
     median = get_id(data, median_index)
     worst = get_id(data, worst_index)
-    print(errors)
-    print(min(errors), errors_copy[len(errors) // 2], max(errors))
-    print(best, median, worst)
+    print("Best-matching HRTF: ", best, " with error: ", min(errors))
+    print("Worst-matching HRTF: ", worst, " with error: ", max(errors))
